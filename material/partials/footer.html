@@ -1,19 +1,17 @@
-{#-
-  This file was automatically generated - do not edit
--#}
+<!--
+ * @Description: 
+ * @Author: 妄想
+ * @Date: 2020-06-17 21:32:18
+ * @LastEditTime: 2020-06-17 21:37:13
+ * @LastEditors: 妄想
+--> 
 {% import "partials/language.html" as lang with context %}
-<script>function scrollFunction(){20<document.body.scrollTop||20<document.documentElement.scrollTop?document.getElementById("myBtn").style.display="block":document.getElementById("myBtn").style.display="none"}function topFunction(){document.body.scrollTop=0,document.documentElement.scrollTop=0}window.onscroll=function(){scrollFunction()}</script>
-<button onclick="topFunction()" id="myBtn" class="data-tip-left" data-tip="回到顶部">
-  <svg class="Zi Zi--BackToTop data-tip-left" data-tip="回到顶部" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
-    <path d="M16.036 19.59a1 1 0 0 1-.997.995H9.032a.996.996 0 0 1-.997-.996v-7.005H5.03c-1.1 0-1.36-.633-.578-1.416L11.33 4.29a1.003 1.003 0 0 1 1.412 0l6.878 6.88c.782.78.523 1.415-.58 1.415h-3.004v7.005z"></path>
-  </svg>
-</button>
 <footer class="md-footer">
   {% if page.previous_page or page.next_page %}
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         {% if page.previous_page %}
-          <a href="{{ page.previous_page.url | url }}" title="{{ page.previous_page.title | striptags }}" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="{{ page.previous_page.url | url }}" title="{{ page.previous_page.title }}" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -28,7 +26,7 @@
           </a>
         {% endif %}
         {% if page.next_page %}
-          <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title }}" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
@@ -47,7 +45,7 @@
   {% endif %}
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
+      <!-- <div class="md-footer-copyright">
         {% if config.copyright %}
           <div class="md-footer-copyright__highlight">
             {{ config.copyright }}
@@ -58,31 +56,20 @@
         and
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
-        <div id="miitbeian"></div>
-      </div>
-      {% set hash = config.extra.githash %}
-      <span style="float:right" class="build_date_utc"><a href="https://github.com/leo6033/CSU_CS_Experiment">最近更新：{{ hash }}, {{
-          build_date_utc.strftime('%Y-%m-%d') }}</a></span>
-      <script>
-        /* miitbeian */
-        if (window.location.hostname == "oi-wiki.com") {
-          document.getElementById("miitbeian").innerHTML = `<a href="http://beian.miit.gov.cn/">黑ICP备19005132号-2</a>`;
-        }
-        /* Easter Egg */
-        console.log(`%c OI Wiki %c {{ hash }} %c`,"background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff","background:#41b883 ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff","background:transparent");
-        console.log('少年，恭喜你囍提彩蛋，我们在做一些 OI 相关的有趣的事情，如果您对此感兴趣，欢迎访问 ');
-      </script>
-      {% include "partials/social.html" %}
+      </div> -->
+      {% block social %}
+        {% include "partials/social.html" %}
+      {% endblock %}
     </div>
     <div class="sponsor" style="text-align: center;color: white;vertical-align: middle;">
-       <span />
-      <a href="/intro/csu/">
-        <img src="https://upload.wikimedia.org/wikipedia/zh/4/4d/%E4%B8%AD%E5%8D%97%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%BE%BD.png" style="
-          vertical-align: -12px;
-          width: 60px;
-          margin-left:5px;
-        ">
-      </a>
-    </div>
+      <span />
+     <a href="/intro/csu/">
+       <img src="https://upload.wikimedia.org/wikipedia/zh/4/4d/%E4%B8%AD%E5%8D%97%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%BE%BD.png" style="
+         vertical-align: -12px;
+         width: 60px;
+         margin-left:5px;
+       ">
+     </a>
+   </div>
   </div>
 </footer>
