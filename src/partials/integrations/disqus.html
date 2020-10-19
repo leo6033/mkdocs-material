@@ -25,12 +25,12 @@
   <script>
     const gitalk = new Gitalk({
       clientID: '06889186a27dcdd511d2',
-      clientSecret: '99da13004fe06bd7793d9ca01537db730cb5a0e6',
+      clientSecret: 'dcc8e6c92bab3afc32244e3d7acd086efa66a61e',
       repo: 'gitcomment',  // 使用单独的仓评论
       owner: 'disc0ver-csu',  // 仓库所有者
       admin: ['妄想', 'Edwardzcn'],  // 仓库管理员列表
-      id: '{{ page.title | default("404", true)  }}',  // 页面唯一标识
-      //id: md5(location.pathname),
+      //id: '{{ page.title | default("404", true)  }}',  // 页面唯一标识
+      id: md5(location.pathname),
       distractionFreeMode: false,  // 全屏遮罩效果
       pagerDirection: 'last'  // 排序方式：first按评论创建时间正序，last倒序
     })
